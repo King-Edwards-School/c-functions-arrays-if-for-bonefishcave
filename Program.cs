@@ -4,20 +4,23 @@
     {
         static void Main(string[] args) // place to call functions and give them parameters
         {
-            string[] names = { "diddy", "chiddy", "fiddy" };
+            string[] names = { "diddy", "chiddy", "fiddy" }; //1
             PrintElements(names);
 
-            int[] integers = { 546, 9578, 413, 544 };
+            int[] integers = { 546, 9578, 413, 544 }; //2
             printSumIntegers(integers);
 
-            for (int repeatTimes = 2; repeatTimes < 100; repeatTimes++)
+            for (int repeatTimes = 2; repeatTimes < 100; repeatTimes++) //3
             {
                 bool isPrime = checkPrime(repeatTimes);
                 Console.WriteLine(Convert.ToString(repeatTimes) + "is a prime: " + Convert.ToString(isPrime));
             }
 
-            int[] unsorted = { 5, 3, 56, 3, 78, 12, 324, 5, 23, 4 };
+            int[] unsorted = { 5, 3, 56, 3, 78, 12, 324, 5, 23, 4 }; //4 
             bubbleSort(unsorted);
+
+            int[] integersForSearch = { 5, 3, 56, 3, 78, 12, 324, 5, 23, 4 }; //5 
+
 
         }
         static void PrintElements(string[] data)
@@ -65,15 +68,21 @@
                         int temp = data[j];
                         data[j] = data[j + 1];
                         data[j + 1] = temp;
+                    }
                 }
+                Console.WriteLine("Sorted array: ");
+                for (int i = 0; i < length; i++)
+                {
+                    Console.Write(data[i] + " ");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine("Sorted array: ");
-            for (int i = 0; i < length; i++)
-            {
-                Console.Write(data[i] + " ");
-            }
-            Console.WriteLine();
-            }
+        }
+
+        static void binarySearch(int[] data)
+        {
+
+
         }
     }
 }
