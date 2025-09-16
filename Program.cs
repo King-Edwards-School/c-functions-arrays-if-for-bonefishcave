@@ -2,19 +2,23 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // place to call functions and give them parameters
         {
             string[] names = { "diddy", "chiddy", "fiddy" };
             PrintElements(names);
+
             int[] integers = { 546, 9578, 413, 544 };
             printSumIntegers(integers);
+
             for (int repeatTimes = 2; repeatTimes < 100; repeatTimes++)
             {
                 bool isPrime = checkPrime(repeatTimes);
-                Console.WriteLine(Convert.ToString(repeatTimes)+ "is a prime: " + Convert.ToString(isPrime));
-
-             
+                Console.WriteLine(Convert.ToString(repeatTimes) + "is a prime: " + Convert.ToString(isPrime));
             }
+
+            int[] unsorted = { 5, 3, 56, 3, 78, 12, 324, 5, 23, 4 };
+            bubbleSort(unsorted);
+
         }
         static void PrintElements(string[] data)
         {
@@ -22,34 +26,54 @@
             {
                 Console.WriteLine(data[i]);
             }
-            
+
         }
-       
+
         static void printSumIntegers(int[] data) // void means it doesn't return anything
         {
-            for (int i =0; i < data.Length; i++) // sets i as temporary variable and uses it to cycle through all elements in the array.
+            for (int i = 0; i < data.Length; i++) // sets i as temporary variable and uses it to cycle through all elements in the array.
             {
                 int sum = 0;
                 sum += data[i];
-                Console.WriteLine(sum); 
+                Console.WriteLine(sum);
             }
         }
-    
+
         static bool checkPrime(int number)
         {
             bool isPrime = true;
-            for (int i = 2; i< number; i++) // sets i as temporary variable which can be used to cycle through all numbers less than the input number
+            for (int i = 2; i < number; i++) // sets i as temporary variable which can be used to cycle through all numbers less than the input number
             {
                 if (number % i == 0) // if the input number is divisible by any number other than 1 and itself, it is not prime
                 {
                     isPrime = false;
-                   
+                    break;
                 }
             }
             return isPrime; // will return the unchanged isPrime = true if no divisors found 
         }
-        
-    
-    
-    }   
+
+        static void bubbleSort(int[] data)
+        {
+            int length = data.Length;
+            for (int i = 0; i < length - 1; i++)
+            {
+                for (int j = 0; j < length - i - 1; j++)
+                {
+                    if (data[j] > data[j + 1])
+                    {
+                        int temp = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = temp;
+                }
+            }
+            Console.WriteLine("Sorted array: ");
+            for (int i = 0; i < length; i++)
+            {
+                Console.Write(data[i] + " ");
+            }
+            Console.WriteLine();
+            }
+        }
+    }
 }
