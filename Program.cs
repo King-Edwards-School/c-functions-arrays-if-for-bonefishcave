@@ -81,8 +81,28 @@
 
         static void binarySearch(int[] data)
         {
-
-
+            int length = data.Length; 
+            int target = 12;
+            int leftEnd = 0;
+            int rightEnd = length - 1;
+            while (leftEnd <= rightEnd)
+            {
+                int mid = leftEnd + (rightEnd - leftEnd) / 2; 
+                if (data[mid] == target)
+                {
+                    Console.WriteLine("Found target at index: " + mid);
+                    return;
+                }
+                if (data[mid] < target)
+                {
+                    leftEnd = mid + 1;
+                }
+                else
+                {
+                    rightEnd = mid - 1;
+                }
+            }
+            Console.WriteLine(-1); //target not found
         }
     }
 }
