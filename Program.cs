@@ -81,7 +81,7 @@
 
         static void binarySearch(int[] data)
         {
-            int length = data.Length; 
+            int length = data.Length;
             int target = 12;
             int leftEnd = 0;
             int rightEnd = length - 1;
@@ -104,6 +104,8 @@
                 }
             }
             Console.WriteLine(-1); //target not found
+            
+            // This is not working in the terminal because i dont know how to change .net version on VScode (apple) although copilot says there's no syntax errors
         }
     }
 }
