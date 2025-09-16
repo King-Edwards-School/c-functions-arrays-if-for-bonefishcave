@@ -19,8 +19,8 @@
             int[] unsorted = { 5, 3, 56, 3, 78, 12, 324, 5, 23, 4 }; //4 
             bubbleSort(unsorted);
 
-            int[] integersForSearch = { 5, 3, 56, 3, 78, 12, 324, 5, 23, 4 }; //5 
-
+            int[] integersForSearch = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,16,200 }; //5 
+            binarySearch(integersForSearch);
 
         }
         static void PrintElements(string[] data)
@@ -85,21 +85,22 @@
             int target = 12;
             int leftEnd = 0;
             int rightEnd = length - 1;
-            while (leftEnd <= rightEnd)
+            while (leftEnd <= rightEnd) // Continue searching while there is a range to search
             {
-                int mid = leftEnd + (rightEnd - leftEnd) / 2; 
+                int mid = leftEnd + (rightEnd - leftEnd) / 2; // Find the middle index of the current search range
                 if (data[mid] == target)
+                //mid is the position of the target
                 {
                     Console.WriteLine("Found target at index: " + mid);
                     return;
                 }
                 if (data[mid] < target)
                 {
-                    leftEnd = mid + 1;
+                    leftEnd = mid + 1; // Search in the right half
                 }
                 else
                 {
-                    rightEnd = mid - 1;
+                    rightEnd = mid - 1; // Search in the left half
                 }
             }
             Console.WriteLine(-1); //target not found
