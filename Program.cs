@@ -94,7 +94,7 @@
                     Console.WriteLine("Found target at index: " + mid);
                     return;
                 }
-                if (data[mid] < target)
+                if (data[mid] < target) //mid is position of the target
                 {
                     leftEnd = mid + 1; // Search in the right half
                 }
