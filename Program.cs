@@ -34,9 +34,9 @@
 
         static void printSumIntegers(int[] data) // void means it doesn't return anything
         {
+            int sum = 0;
             for (int i = 0; i < data.Length; i++) // sets i as temporary variable and uses it to cycle through all elements in the array.
             {
-                int sum = 0;
                 sum += data[i];
                 Console.WriteLine(sum);
             }
@@ -58,10 +58,10 @@
 
         static void bubbleSort(int[] data)
         {
-            int length = data.Length;
-            for (int i = 0; i < length - 1; i++)
+            int length = data.Length;             // i is the position in the array 
+            for (int i = 0; i < length - 1; i++) //repeat as long as i is one less than the the length of the array because of 0,1,2,3
             {
-                for (int j = 0; j < length - i - 1; j++)
+                for (int j = 0; j < length - i - 1; j++) //j is the number of comparisons made
                 {
                     if (data[j] > data[j + 1])
                     {
